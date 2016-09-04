@@ -3,4 +3,4 @@ module Welcome
     ) where
 
 system :: IO ()
-system = putStrLn "andromeda"
+system = putStrLn "andromeda 0.1.0.0"
