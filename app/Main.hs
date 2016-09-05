@@ -1,13 +1,13 @@
 module Main where
 
 import Interpreter
+import Configure
 
 import System.IO
 
 main :: IO ()
 main = do
-  clearScreen
-  add 1 1
-  welcome
+  clear
+  welcome version
   hFlush stdout
   command
