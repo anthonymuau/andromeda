@@ -3,10 +3,10 @@ module Interpreter
     , clear
     , welcome
     , sendtoTerm
-    , add
     ) where
 
 import System.IO
+import Data.List.Split
 
 command :: IO ()
 command = do
@@ -24,7 +24,8 @@ sendtoTerm :: IO()
 sendtoTerm = hFlush stdout
 
 process :: String -> IO()
-process tokens = do
-  if tokens == "hello"
+process tokenLine = do
+  let tokens = splitOn " " tokenLine
+  if tokenLine == "hello"
   then putStrLn ("Hello back")
-  else putStrLn ("#" ++ tokens)
+  else putStrLn ("#" ++ tokenLine)
