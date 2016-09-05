@@ -25,7 +25,6 @@ sendtoTerm = hFlush stdout
 
 process :: String -> IO()
 process tokens = do
-  putStrLn ("#" ++ tokens)
-
-add :: Integer -> Integer -> IO()
-add x y = putStrLn(show (x + y))
+  if tokens == "hello"
+  then putStrLn ("Hello back")
+  else putStrLn ("#" ++ tokens)
