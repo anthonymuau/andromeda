@@ -12,8 +12,7 @@ command = do
   putStrLn ("#" ++ line ++ "")
 
 welcome :: IO ()
-welcome = do
-  putStrLn ("andromeda " ++ version)
+welcome = putStrLn ("andromeda " ++ version)
 
 clearScreen :: IO()
 clearScreen = putStr "\ESC[2J"
