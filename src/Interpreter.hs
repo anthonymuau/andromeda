@@ -2,6 +2,7 @@ module Interpreter
     ( command
     , clearScreen
     , welcome
+    , add
     ) where
 
 import Configure
@@ -16,3 +17,6 @@ welcome = putStrLn ("andromeda " ++ version)
 
 clearScreen :: IO()
 clearScreen = putStr "\ESC[2J"
+
+add :: Integer -> Integer -> IO()
+add x y = putStrLn(show (x + y))
