@@ -2,5 +2,8 @@ module Welcome
     ( system
     ) where
 
+import Configure
+
 system :: IO ()
-system = putStrLn "andromeda 0.1.0.0"
+system = do
+  putStrLn ("andromeda " ++ version)
