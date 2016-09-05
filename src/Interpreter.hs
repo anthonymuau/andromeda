@@ -11,11 +11,8 @@ import System.IO
 command :: IO ()
 command = do
   line <- getLine
-  if null line
-    then command
-    else do
-      putStrLn ("#" ++ line ++ "")
-      command
+  process line
+  command
 
 welcome :: String -> IO ()
 welcome version = putStrLn ("andromeda " ++ version)
@@ -25,6 +22,10 @@ clear = putStr "\ESC[2J"
 
 sendtoTerm :: IO()
 sendtoTerm = hFlush stdout
+
+process :: String -> IO()
+process tokens = do
+  putStrLn ("#" ++ tokens)
 
 add :: Integer -> Integer -> IO()
 add x y = putStrLn(show (x + y))
