@@ -11,7 +11,11 @@ import System.IO
 command :: IO ()
 command = do
   line <- getLine
-  putStrLn ("#" ++ line ++ "")
+  if null line
+    then command
+    else do
+      putStrLn ("#" ++ line ++ "")
+      command
 
 welcome :: String -> IO ()
 welcome version = putStrLn ("andromeda " ++ version)
