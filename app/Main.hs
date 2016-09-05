@@ -7,6 +7,7 @@ import System.IO
 
 main :: IO ()
 main = do
+  clearScreen
   system
   hFlush stdout
   command
